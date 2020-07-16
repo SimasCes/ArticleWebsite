@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Search - Running Boots</title>
+<meta charset="UTF-8">
+<!--To make it more responsive -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Link to the CSS code -->
+<link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <a href="search.html" class="current_page">Search</a>
+  <a href="cardio.html">Cardio</a>
+  <a href="index.html" id="nav_site_name">Running Boots</a>
+  <a href="weight.html">Weight</a>
+  <a href="diet.html">Diet</a>
+</nav>
+
+<!-- Main image after the navigation -->
+<header>
+    <h2 class="text_over_image_1">Search for specific articles below ↓</h2>
+    <img src="images/search.jpg" class="main_img" alt="Image of a magnifying glass over an old book, the text is in red and black. The language letters seem similar to sanskrit.">
+</header>
+    
+<!-- The search bar code and options code was gotten from https://www.w3schools.com/howto/howto_js_search_menu.asp however it was edited and changed to suit this project -->
+<!-- Search bar -->
+<input type="text" id="search" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+
+<!-- The options that come up in the search bar -->
+<ul id="search_bar">
+    <li><a href="cardio.html">Cardio</a></li>
+    <li><a href="weight.html">Weight Training</a></li>
+    <li><a href="diet.html">Diet</a></li>
+    <li><a href="run.html">Why run slow?</a></li>
+    <li><a href="swim.html">Tips For Swimming in a Triathlon</a></li>
+    <li><a href="barbell.html">Barbell Rows</a></li>
+    <li><a href="tired.html">How to Avoid the Agony of Post-Exercise Fatigue - And Build Stronger Muscles</a></li>
+    <li><a href="fish.html">Learn How to Cook Salmon</a></li>
+    <li><a href="lunch.html">Why Stopping for Lunch Is Important</a></li>
+</ul>
+    
+<!-- Footer -->
+<footer id="bottom_footer">
+  <h6>This website has been made for a University project and uses articles that have been copied form the internet. This site is not used to make any profit and any resources used are to make the website more realistic.</h6>
+</footer>
+
+<!-- Link to the JavaScript code -->
+<script src="myScript.js"></script>
+</body>
+</html>

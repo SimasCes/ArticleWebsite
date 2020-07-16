@@ -1,0 +1,23 @@
+/* Style the body */
+body {
+    font-family: Arial, serif, sans-serif, monospace;
+    margin: 0;
+    background-color: #F3ECE4;
+    margin: 0 2vw 0 2vw;
+}
+
+p {
+    font-size: 1.4vw;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    /* Makes the image cover the box and shrink so the image is not strecthed out */
+    object-fit: cover;
+}
+
+.flip{
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}

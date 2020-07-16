@@ -1,0 +1,313 @@
+    /* The actual flex box structure; I took elements from a range of online tutorials to make the flex-box function how it does, however I mostly used my own previous knowledge. Styling the whole body font (so not inddividually for paragraphs) was taken from https://www.w3schools.com/css/css3_flexbox.asp and edited */
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: Arial, serif, sans-serif, monospace;
+    margin: 0;
+    background-color: #F3ECE4;
+}
+
+/* For all the article pages*/
+.article_page_body {
+    margin: 0 2vw 0 2vw;
+}
+
+/* Highlights the current page you are on */
+.current_page{
+    background-color: #D2B69A;
+}
+
+/* Style the top navigation bar */
+nav {
+    display: flex;
+    background-color: #E8DCCC;
+    position: sticky;
+    position: -webkit-sticky; /* For Safari */
+    top: 0;
+    z-index: 1;
+}
+
+/* Style the navigation bar links */
+nav a, #nav_site_name{
+    padding: 15px 0px 15px 0px;
+    text-decoration: none;
+    text-align: center;
+    width:100%;
+}
+
+/* Styling of the actual nav font-size */
+/* If screen size is more than 600px wide, set the word size to 22px */
+@media screen and (min-width: 700px) {
+  nav {
+    font-size: 33px;
+  }
+}
+
+/* If screen size is 600px wide or less, set the word size to 14px */
+@media screen and (max-width: 700px) {
+  nav {
+    font-size: 17px;
+  }
+}
+
+/* For the Running Boots text name in the nav*/
+#nav_site_name{
+    /* Makes the text look bold without changing the layout and design of the nav */
+    text-shadow: #000 0.01vw 0.1vw;
+}
+
+/* Change color on hover */
+nav a:hover {
+    background-color: #FED361;
+    color: black;
+}
+
+/* Changes the link colour to black and not underlined is especially useful as the article selection is purple without this, like on the main cardio or weight page*/
+a:link, a:visited{
+   color: black;
+   text-decoration: none;
+}
+
+/* Main Image after the navigation */
+.main_img {
+    width: 100%;
+    height: 50vw;
+    /* Makes the image cover the box and shrink so the image is not strecthed out */
+    object-fit: cover;
+}
+
+/* Styles the text over images in whole website */
+.text_over_image_1{
+    position: absolute;
+    top: 21vw;
+    left: 15%;
+    color: floralwhite;
+    font-size: 4vw;
+    text-shadow: 0.2vw 0.1vw gray;
+    transform: translate(-10%, -10%);
+}
+
+/* Styles the front page, second off-set line of text saying 'we are not lost when we run'*/
+#text_over_image_2{
+    position: absolute;
+    top: 28vw;
+    left: 43%;
+    color: floralwhite;
+    font-size: 2vw;
+    text-shadow: 0.2vw 0.1vw gray;
+    transform: translate(-10%, -45%);
+}
+
+/* To style the click here to make it personalised button text */
+#text_over_image_0{
+    position: absolute;
+    top: 20vw;
+    left: 20%;
+    color: floralwhite;
+    font-size: 2vw;
+    transform: translate(-10%, -10%);
+    background-color: #F3ECE4;
+    color: #D2B69A;
+}
+
+/* To lower the opacity for the main images in the image carousel */
+.fade_main_img{
+    opacity: 0.3;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+/* To change the text to black for the main images in the image carousel*/
+.text_over_image_3{
+    position: absolute;
+    top: 18vw;
+    left: 15%;
+    color: black;
+    font-size: 4vw;
+    transform: translate(-10%, -10%);
+}
+
+/* Column container for aside and article */
+main {  
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/right column for addverts (and about us for front page) */
+aside {
+    flex: 30%;
+    background-color: #F3ECE4;
+    padding: 20px;
+}
+
+/* Main column for articles */
+article {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Addvert images and the About us image */
+.add_img {
+    width: 100%;
+}
+
+/* For the adds used in the articles themselves*/
+.article_add {
+    height: 25vw;
+    width: 40vw;
+    object-fit: cover;
+    float: right;
+    margin: 0 0vw 1vw 1vw;
+}
+
+/* Article images */
+.article_img {
+    width: 100%;
+    height: 20vw;
+    /* Makes the image cover the box and shrink so the image is not strecthed out */
+    object-fit: cover;
+}
+
+/* For the pages to have the category, date, title of afticle, advert, and about us styled */
+h5, h1{
+    background-color: black;
+    color: white;
+}
+
+/* Styling of the actual article paragraphs */
+/* If screen size is more than 600px wide, set the article word size to 22px */
+@media screen and (min-width: 600px) {
+  .article_para {
+    font-size: 22px;
+  }
+}
+
+/* If screen size is 600px wide or less, set the article word size to 14px */
+@media screen and (max-width: 600px) {
+  .article_para {
+    font-size: 14px;
+  }
+}
+
+/* To make a read more tag and be able to click it to take you to the article itself*/
+.read_more{
+    color: darkgray;
+}
+
+/* Footer */
+footer {
+    padding: 1px;
+    text-align: center;
+    background: #DDD;
+    color: darkgray;
+    background-color: #E8DCCC;
+}
+
+/* To keep the footer at the bottom for the search page */
+#bottom_footer{
+    margin-top: 15vw;
+}
+
+/* For the animation - article page text changes to yellow for a second before you read it */
+.article_para {
+    animation-name: colour_change;
+    animation-duration: 1.5s;
+    -webkit-animation-name: colour_change; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+}
+
+/* Standard syntax */
+@keyframes colour_change {
+    from {background-color: #E8DCCC;}
+    25% {background-color: #F1C859;}
+    75% {background-color: #F1C859;}
+    100% {background-color: #E8DCCC;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes colour_change {
+    from {background-color: #E8DCCC;}
+    25% {background-color: #F1C859;}
+    75% {background-color: #F1C859;}
+    100% {background-color: #E8DCCC;}
+}
+
+
+
+
+ /* This code was copied from https://www.w3schools.com/howto/howto_js_search_menu.asp, some aspects of styling were chnaged */
+/* Style the search box */
+#search {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #DDD;
+}
+
+/* Style the navigation menu */
+#search_bar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+}
+
+/* Style the navigation links */
+#search_bar li a {
+    background-color: #F6F6F6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+/* Style the navigation links on hover */
+#search_bar li a:hover {
+    background-color: #EEE;
+}
+
+
+
+
+/* Styling for the image carousel*/
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_multiple was used to help create the image carousel*/
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 34vw;
+    padding: 1vw;
+    color: white;
+    font-size: 9vw;
+    transition: 0.6s ease;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+    background-color: #E8DCCC;
+    color: black;
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
